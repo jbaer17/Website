@@ -1,18 +1,10 @@
-// src/components/ui/button.jsx
-export function Button({ children, onClick }) {
+export function Button({ children, className = '', ...props }) {
   return (
     <button
-      onClick={onClick}
-      style={{
-        padding: '10px 20px',
-        backgroundColor: '#333',
-        color: 'white',
-        border: 'none',
-        borderRadius: '5px',
-        cursor: 'pointer'
-      }}
+      className={`px-6 py-3 rounded font-semibold transition ${className}`}
+      {...props}
     >
       {children}
     </button>
-  )
+  );
 }
