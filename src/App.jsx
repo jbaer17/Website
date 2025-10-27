@@ -18,6 +18,7 @@ const gallery = [
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans">
+
       {/* Header */}
       <header className="bg-slate-900/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-800">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -69,6 +70,7 @@ export default function App() {
         {/* Portfolio Section */}
         <section id="portfolio" className="mt-24">
           <h3 className="text-3xl font-semibold text-white mb-2">Portfolio</h3>
+          <p className="text-slate-400">A cinematic blend of sports and lifestyle moments — rich tones, real emotion, and intentional composition.</p>
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4">
             {gallery.map((g, i) => (
               <motion.div key={i} whileHover={{ scale: 1.03 }}>
@@ -105,10 +107,19 @@ export default function App() {
             <input name="email" className="p-3 bg-slate-800 border border-slate-700 rounded focus:outline-none focus:ring-2 focus:ring-slate-600" placeholder="Email" />
             <input name="phone" className="p-3 bg-slate-800 border border-slate-700 rounded focus:outline-none focus:ring-2 focus:ring-slate-600" placeholder="Phone (optional)" />
             <input name="date" className="p-3 bg-slate-800 border border-slate-700 rounded focus:outline-none focus:ring-2 focus:ring-slate-600" placeholder="Preferred date" />
-            <textarea name="message" className="p-3 bg-slate-800 border border-slate-700 rounded md:col-span-2 focus:outline-none focus:ring-2 focus:ring-slate-600" rows={4} placeholder="Tell me about your shoot" />
+            <textarea name="message" className="p-3 bg-slate-800 border border-slate-700 rounded md:col-span-2 focus:outline-none focus:ring-2 focus:ring-slate-600" rows={4} placeholder="Tell me about your shoot"></textarea>
             <div className="md:col-span-2 flex gap-4">
               <Button type="submit" className="bg-white text-slate-900 hover:bg-slate-200">Send Request</Button>
             </div>
           </form>
         </section>
-     
+      </main> {/* <-- closing main tag */}
+
+      {/* Footer */}
+      <footer className="border-t border-slate-800 mt-24 py-8 text-center text-slate-500 text-sm">
+        © {new Date().getFullYear()} {BUSINESS_NAME}. All rights reserved.
+      </footer>
+
+    </div>
+  );
+}
